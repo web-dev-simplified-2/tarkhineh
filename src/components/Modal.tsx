@@ -52,11 +52,11 @@ function Modal({
       onClick={(e) => {
         e.currentTarget !== e.target ? null : onClose();
       }}
-      className=" fixed  inset-0 z-20 justify-center 
+      className=" fixed  right-0 top-0 bottom-0  left-0 z-20 h-full justify-center 
     items-center 
     flex 
     overflow-x-hidden 
-    overflow-y-auto outline-none 
+    overflow-y-hidden outline-none 
     focus:outline-none bg-black/60 backdrop-blur-[3px]"
     >
       <div className="relative md:rounded-md bg-white w-full lg:w-[392px] my-6 mx-auto lg:max-w-3xl h-full lg:h-auto">
@@ -76,12 +76,11 @@ function Modal({
         >
           {/* header  */}
           <div className=" flex w-full justify-between h-[40%] md:h-auto  items-center">
-            <Image
-              src={CloseIcon}
+            <CloseIcon
               onClick={onClose}
-              alt=""
               className=" self-start cursor-pointer rotate-45 h-6 w-6"
             />
+
             <div>
               <Image src={greenBig} alt="" className="  md:h-8 md:w-[102px] " />
             </div>
@@ -91,13 +90,11 @@ function Modal({
           {/*body*/}
           <div className="relative flex-auto">{body}</div>
           {/*footer*/}
-          <div className="flex flex-col gap-2 p-10">
+          <div className="flex flex-col mt-10 gap-2 ">
             <Button
               disabled={disabled}
               label={actionLabel}
-              secondary
               fullWidth
-              large
               onClick={handleSubmit}
             />
             {footer}
