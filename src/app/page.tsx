@@ -6,6 +6,7 @@ import bannerSlider2 from "../assets/BannerSlider/bannerSlider2.jpg";
 import bannerSlider3 from "../assets/BannerSlider/bannerSlider3.jpg";
 import bannerSlider4 from "../assets/BannerSlider/bannerSlider4.jpg";
 import BannerSlider from "@/components/BannerSlider";
+import InfoSection from "../components/InfoSection";
 
 const images = [
   bannerSlider.src,
@@ -20,6 +21,7 @@ export default function Home() {
       
         {/* banner Slider */}
         <BannerSlider images={images} />
+        <InfoSection/>
 
     </div>
   );

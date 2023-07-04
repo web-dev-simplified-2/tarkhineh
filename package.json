@@ -17,6 +17,7 @@
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.7",
     "framer-motion": "^10.12.18",
+    "iconsax-react": "^0.0.8",
     "next": "13.4.7",
     "postcss": "8.4.24",
     "pure-react-carousel": "^1.30.1",
