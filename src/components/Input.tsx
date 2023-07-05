@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 
-import EyeIcon from "../assets/Svg/All/outline/eye.svg";
-import EyeSlashIcon from "../assets/Svg/All/outline/eye-slash.svg";
+import { Eye, EyeSlash } from "iconsax-react";
+
 import Image from "next/image";
 import usePasswordShown from "@/hooks/usePasswordShown";
 
@@ -52,13 +52,13 @@ function Input({
       {label === "password" && (
         <div className=" absolute left-4 cursor-pointer top-2  ">
           {type === "password" ? (
-            <EyeIcon
-              className=" fill-[#717171]"
+            <Eye
+              className=" text-[#717171] "
               onClick={() => passwordShown.onShown()}
             />
           ) : (
-            <EyeSlashIcon
-              className=" fill-[#717171]"
+            <EyeSlash
+              className=" text-[#717171] "
               onClick={() => passwordShown.onHide()}
             />
           )}
@@ -66,7 +66,7 @@ function Input({
       )}
       {InputLogo && (
         <div className="absolute right-4  top-2   ">
-          <InputLogo className=" fill-[#717171]" />
+          <InputLogo className=" text-[#717171] " />
         </div>
       )}
     </div>

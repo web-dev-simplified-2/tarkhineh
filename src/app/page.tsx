@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import bannerSlider from "../assets/BannerSlider/bannerSlider.jpg";
@@ -10,8 +10,8 @@ import BannerSlider from "@/components/BannerSlider";
 import InfoSection from "../components/InfoSection";
 
 import RegisterModal from "@/components/modals/RegisterModal";
-import Modal from "@/components/Modal";
-
+import useRegisterModal from "@/hooks/useRegisterModal";
+import { useSession } from "next-auth/react";
 
 const images = [
   bannerSlider.src,
@@ -21,26 +21,29 @@ const images = [
 ];
 
 export default function Home() {
+  const registerModal = useRegisterModal();
+
+  const { data: session } = useSession();
+
   return (
     <div className=" min-h-screen  w-full">
+      {/* banner Slider */}
+
+      <BannerSlider images={images} />
+      <InfoSection />
+
       
-        {/* banner Slider */}
-        
-        <BannerSlider images={images} />
-        <InfoSection/>
 
-        
-        <div
-        className=" mt-10"
-        >
-        <RegisterModal/>
+      <button
+        className=" p-5 bg-slate-800 text-white"
+        onClick={() => registerModal.onOpen()}
+      >
+        open
+      </button>
 
-        </div>
+      <div className=" w-full overflow-x-auto">{JSON.stringify(session)}</div>
 
-        <Modal/>
-        
-        
-
+      <RegisterModal />
     </div>
   );
 }
