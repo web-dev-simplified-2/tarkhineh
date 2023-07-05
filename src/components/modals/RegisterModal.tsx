@@ -29,7 +29,7 @@ function RegisterModal() {
     try {
       setIsLoading(true);
 
-      await axios.post("/api/register", {
+      const res = await axios.post("/api/register", {
         email,
         password,
         username,
@@ -37,8 +37,6 @@ function RegisterModal() {
       });
 
       setIsLoading(false);
-
-      toast.success("Account created.");
 
       signIn("credentials", {
         email,
