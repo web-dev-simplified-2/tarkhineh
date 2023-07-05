@@ -2,27 +2,41 @@
 
 import Link from "next/link";
 import { ArrowDown2 } from "iconsax-react";
+import { usePathname } from "next/navigation";
+import { useCallback, useState } from "react";
+import { motion } from "framer-motion";
 const navItems = [
   {
     title: "صفحه اصلی",
+    href: "/",
   },
   {
     title: "منو",
+    href: "/menu",
   },
   {
     title: "شعبه",
+    href: "/branches",
   },
   {
     title: "اعطای نمایندگی",
+    href: "/representation",
   },
   {
     title: "درباره ما",
+    href: "/about",
   },
   {
     title: "تماس با ما",
+    href: "/contact",
   },
 ];
 const Navbar = () => {
+  const path = usePathname();
+  const isActive = useCallback(
+    (href: string) => path === href,
+    [path]
+  );
   return (
     <div className="h-[115px] bg-white flex items-center justify-evenly  md:flex md:items-center md:justify-center shadow-[0px_0px_10px_0px_rgba(0, 0, 0, 0.15)]">
       {/* left icons */}
@@ -104,20 +118,38 @@ const Navbar = () => {
       <div
         dir="rtl"
         className="w-[808px] h-[33px] hidden items-center justify-center md:flex">
-        {navItems.map((item, index) => (
-          <Link href="/">
-            <div className="h-[36px] flex items-center justify-center ml-[24px]">
-              <p className="text-[#717171] text-[20px] text-center font-[700] active:text-[#417F56] active:underline-[#417F56]">
-                {item.title}
-              </p>
-              {index === 1 || index === 2 ? (
-                <div className="my-[16px] w-[16px] h-[16px] flex items-center justify-center">
-                  <ArrowDown2 />
-                </div>
-              ) : (
-                ""
-              )}
-            </div>
+        {navItems.map(({ title, href }, index) => (
+          <Link
+            href={href}
+            key={index}
+            className="relative h-[36px] flex items-center justify-center ml-[24px]">
+            <p
+              className={`text-[20px] text-center font-[700] ${
+                isActive(href)
+                  ? "text-[#417F56]"
+                  : "text-[#717171]"
+              }
+                href
+              )}`}>
+              {title}
+            </p>
+            {index === 1 || index === 2 ? (
+              <ArrowDown2
+                className={`w-[16px] mt-[8px] mr-[4px] ${
+                  isActive(href)
+                    ? "text-[#417F56]"
+                    : "text-[#717171]"
+                }`}
+              />
+            ) : (
+              ""
+            )}
+            {isActive(href) && (
+              <motion.span
+                layoutId="underline"
+                className="absolute top-[36px] right-0 h-[1px] w-full bg-[#417F56]"
+              />
+            )}
           </Link>
         ))}
       </div>

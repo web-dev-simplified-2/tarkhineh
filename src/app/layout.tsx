@@ -1,3 +1,4 @@
+import MotionDiv from "./components/MotionDiv";
 import Navbar from "./components/Navbar";
 import "./globals.css";
 import { Inter } from "next/font/google";
@@ -17,8 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        {children}
+        <MotionDiv>
+          <Navbar />
+          {children}
+        </MotionDiv>
       </body>
     </html>
   );
