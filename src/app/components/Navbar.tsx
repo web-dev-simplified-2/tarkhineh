@@ -1,5 +1,27 @@
+"use client";
+
 import Link from "next/link";
-const navItems = ["صفحه اصلی", "شعبه", "", "", "", ""];
+import { ArrowDown2 } from "iconsax-react";
+const navItems = [
+  {
+    title: "صفحه اصلی",
+  },
+  {
+    title: "منو",
+  },
+  {
+    title: "شعبه",
+  },
+  {
+    title: "اعطای نمایندگی",
+  },
+  {
+    title: "درباره ما",
+  },
+  {
+    title: "تماس با ما",
+  },
+];
 const Navbar = () => {
   return (
     <div className="h-[115px] bg-white flex items-center justify-evenly  md:flex md:items-center md:justify-center shadow-[0px_0px_10px_0px_rgba(0, 0, 0, 0.15)]">
@@ -79,22 +101,25 @@ const Navbar = () => {
         </div>
       </div>
       {/* nav items */}
-      <div dir="rtl" className="w-[808px] h-[33px] hidden items-center justify-center md:flex">
-        <Link href="/">
-          <div className="text-[#717171] text-[20px] text-center font-[700] active:text-[#417F56] active:underline-[#417F56]">
-            صفحه اصلی
-          </div>
-        </Link>
-
-        <div className="">
-          <p>شعبه</p>
-        </div>
-        <div className="">
-          <Link href="/">صفحه اصلی</Link>
-        </div>
-        <div className="">
-          <Link href="/">صفحه اصلی</Link>
-        </div>
+      <div
+        dir="rtl"
+        className="w-[808px] h-[33px] hidden items-center justify-center md:flex">
+        {navItems.map((item, index) => (
+          <Link href="/">
+            <div className="h-[36px] flex items-center justify-center ml-[24px]">
+              <p className="text-[#717171] text-[20px] text-center font-[700] active:text-[#417F56] active:underline-[#417F56]">
+                {item.title}
+              </p>
+              {index === 1 || index === 2 ? (
+                <div className="my-[16px] w-[16px] h-[16px] flex items-center justify-center">
+                  <ArrowDown2 />
+                </div>
+              ) : (
+                ""
+              )}
+            </div>
+          </Link>
+        ))}
       </div>
       {/* Nav Logo */}
       <div className="mx-[40px] w-[102px] h-[32px] md:mx-0 md:w-[155px] md:h-[51px] flex items-center justify-center">
