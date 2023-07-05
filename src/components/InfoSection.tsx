@@ -5,7 +5,7 @@ import { ArrowLeft2, Diagram, User, MenuBoard, HomeWifi } from "iconsax-react";
 
 const InfoSection = () => {
   return (
-    <section className=" mt-4 w-full h-[390px] relative">
+    <section className="w-full h-[390px] relative">
       <Image
         src={Img}
         alt="info"
@@ -16,7 +16,7 @@ const InfoSection = () => {
           <h4 className=" text-xl font-primaryBold ">
             رستوران های زنجیره ای ترخینه
           </h4>
-          <p className="font-primary text-lg w-[600px]">
+          <p className="max-[1100px]:text-[18px] max-[1100px]:w-[490px] max-[947px]:text-[15px] max-[947px]:w-[361px] font-primary text-lg w-[600px]">
             مهمان‌نوازی یکی از مهم‌ترین مشخصه‌های ایرانیان است و باعث افتخار
             ماست که بیش از 20 سال است خدمت‌گزار مردم شریف ایران هستیم. ما در
             رستوران‌های زنجیره‌ای ترخینه همواره تلاش کردیم که در محیطی اصیل بر
