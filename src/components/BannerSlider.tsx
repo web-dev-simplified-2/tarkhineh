@@ -25,8 +25,6 @@ function BannerSlider({ images }: BannerSliderProps) {
   const [width, setWidth] = useState(window.innerWidth);
   const [height, setHeight] = useState(window.innerHeight);
 
-  
-
   useEffect(() => {
     const handleResize = () => {
       setWidth(window.innerWidth);
@@ -62,6 +60,7 @@ function BannerSlider({ images }: BannerSliderProps) {
           {images.map((image, index) => {
             return (
               <Slide
+                key={index}
                 index={index}
                 className=" w-full  relative md:max-h-[336px] h-[176px]"
               >
@@ -93,17 +92,14 @@ function BannerSlider({ images }: BannerSliderProps) {
         </Slider>
         <div className="  absolute  left-0 right-0 flex items-end justify-center bottom-0 ">
           <div className="  md:w-[154px] md:h-[33px] h-[19px] w-[82px]  flex items-center justify-center  bg-no-repeat bg-[url('../assets/BannerSlider/Rectangle-mobile.png')] bg-top md:bg-[url('../assets/BannerSlider/Rectangle-desktop.png')]">
-            {images.map((image, index) => {
+            {images.map((_, index) => {
               return (
-                <motion.div
-                  layoutId="SliderDot"
-                  className=" flex  items-center justify-center"
-                >
+                <div key={index} className=" flex  items-center justify-center">
                   <Dot
                     slide={index}
                     className=" h-1 w-1 md:w-2 md:h-2 mx-[2px]  disabled:bg-primary md:disabled:h-4 md:disabled:w-4 disabled:h-2 disabled:w-2 disabled:border-2 disabled:border-[#e5f2e9] rounded-full bg-[#adadad]"
                   />
-                </motion.div>
+                </div>
               );
             })}
           </div>

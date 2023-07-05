@@ -1,7 +1,6 @@
 import React, { useCallback } from "react";
-import CloseIcon from "../assets/Svg/All/outline/add.svg";
 import greenBig from "../assets/Logo/greenBig.png";
-import greenSmall from "../assets/Logo/greenSmall.png";
+import Plus from "../assets/plus.svg";
 
 import Image from "next/image";
 import Button from "./Button";
@@ -50,16 +49,16 @@ function Modal({
   return (
     <div
       onClick={(e) => {
-        e.currentTarget !== e.target ? null : onClose();
+        e.currentTarget !== e.target ? null : handleClose();
       }}
-      className=" fixed  right-0 top-0 bottom-0  left-0 z-20 h-full justify-center 
+      className=" fixed  inset-0 z-20  justify-center 
     items-center 
     flex 
     overflow-x-hidden 
     overflow-y-hidden outline-none 
     focus:outline-none bg-black/60 backdrop-blur-[3px]"
     >
-      <div className="relative md:rounded-md bg-white w-full lg:w-[392px] my-6 mx-auto lg:max-w-3xl h-full lg:h-auto">
+      <div className="relative md:rounded-md bg-white w-full h-full lg:w-[392px] my-6 mx-auto lg:max-w-3xl lg:h-auto">
         {/*content*/}
         <div
           className="
@@ -76,9 +75,9 @@ function Modal({
         >
           {/* header  */}
           <div className=" flex w-full justify-between h-[40%] md:h-auto  items-center">
-            <CloseIcon
-              onClick={onClose}
-              className=" self-start cursor-pointer rotate-45 h-6 w-6"
+            <Plus
+              onClick={handleClose}
+              className=" self-start cursor-pointer fill-[#717171] rotate-45 h-6 w-6"
             />
 
             <div>
