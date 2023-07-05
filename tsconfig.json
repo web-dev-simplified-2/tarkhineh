@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/BannerSlider.tsx", "src/components/InfoSection.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/BannerSlider.tsx", "src/components/InfoSection.tsx"],
   "exclude": ["node_modules"]
 }
