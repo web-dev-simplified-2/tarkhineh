@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   ButtonBack,
   ButtonNext,
@@ -22,11 +22,39 @@ interface BannerSliderProps {
 }
 
 function BannerSlider({ images }: BannerSliderProps) {
+  const [width, setWidth] = useState(window.innerWidth);
+  const [height, setHeight] = useState(window.innerHeight);
+
+  
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+      setHeight(window.innerHeight);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  console.log(width, height);
+
+  function heightHandler(height: number, width: number) {
+    if (width >= 768) {
+      return width / 336;
+    } else {
+      return width / 176;
+    }
+  }
+
   return (
     <MotionDiv>
       <CarouselProvider
         naturalSlideHeight={1}
-        naturalSlideWidth={1}
+        naturalSlideWidth={heightHandler(height, width)}
         totalSlides={images.length}
         className=" md:h-[336px] h-[176px] relative"
       >
@@ -41,12 +69,12 @@ function BannerSlider({ images }: BannerSliderProps) {
                 <div className=" md:h-[336px] h-[176px] w-full bg-[#21402B]/50 absolute left-0 right-0 top-0 " />
 
                 <div className="  absolute left-0 right-0 flex items-center justify-center top-0 md:h-[336px] h-[176px] ">
-                  <div className="      flex flex-col items-center   ">
+                  <div className="  flex flex-col items-center ">
                     <p className=" text-white lg:text-4xl md:text-2xl  text-xl  font-primaryBold ">
                       یک ماجراجویی آشپزی برای تمام حواس
                     </p>
 
-                    <button className=" md:font-primary  text-sm md:text-base font-primaryThin bg-primary py-2 text-white px-3 md:px-8 rounded-md mt-5 md:mt-10">
+                    <button className=" md:font-primary  text-sm md:text-base  font-primaryThin bg-primary py-2 text-white px-3 md:px-8 rounded-md mt-5 md:mt-10">
                       سفارش آنلاین غذا
                     </button>
                   </div>
