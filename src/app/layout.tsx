@@ -1,5 +1,6 @@
-import MotionDiv from "./components/MotionDiv";
-import Navbar from "./components/Navbar";
+import Provider from "@/components/Provider";
+import { Toaster } from "react-hot-toast";
+
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -17,12 +18,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <MotionDiv>
-          <Navbar />
-          {children}
-        </MotionDiv>
-      </body>
+      
+        <Provider>
+          <Toaster />
+          <body className={inter.className}>{children}</body>
+        </Provider>
+
     </html>
   );
 }
