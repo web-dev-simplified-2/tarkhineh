@@ -14,7 +14,6 @@ import "pure-react-carousel/dist/react-carousel.es.css";
 import RightArrow from "../assets/BannerSlider/RightArrow.jsx";
 import LeftArrow from "../assets/BannerSlider/LeftArrow.jsx";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import MotionDiv from "./MotionDiv";
 
 interface BannerSliderProps {

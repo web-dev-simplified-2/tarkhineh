@@ -9,7 +9,6 @@ import BannerSlider from "@/components/BannerSlider";
 import RegisterModal from "@/components/modals/RegisterModal";
 import useRegisterModal from "@/hooks/useRegisterModal";
 import { useSession } from "next-auth/react";
-import Provider from "@/components/Provider";
 
 const images = [
   bannerSlider.src,
