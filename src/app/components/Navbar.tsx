@@ -1,7 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowDown2 } from "iconsax-react";
+import {
+  ArrowDown2,
+  User,
+  ShoppingCart,
+  SearchNormal,
+  SearchNormal1,
+} from "iconsax-react";
 import { usePathname } from "next/navigation";
 import { useCallback, useState } from "react";
 import { motion } from "framer-motion";
@@ -32,86 +38,46 @@ const navItems = [
   },
 ];
 const Navbar = () => {
+  const isLogged: boolean = true; // this is for when user is logged or nah
+  const isBuyed: boolean = true; //this is for when user is logged or nah
   const path = usePathname();
   const isActive = useCallback(
     (href: string) => path === href,
     [path]
   );
   return (
-    <div className="h-[115px] bg-white flex items-center justify-evenly  md:flex md:items-center md:justify-center shadow-[0px_0px_10px_0px_rgba(0, 0, 0, 0.15)]">
+    <div className=" sticky top-0 z-50 px-2 h-[115px] bg-white flex items-center justify-evenly  md:flex md:items-center md:justify-center shadow-[0px_0px_10px_0px_rgba(0, 0, 0, 0.15)]">
       {/* left icons */}
       <div className="h-[40px] flex items-center gap-2">
         {/* user */}
-        <div className="w-[32px] h-[32px] md:w-[40px] md:h-[40px] flex items-center justify-center bg-[#E5F2E9] rounded-[4px]">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M12 12.75C8.83 12.75 6.25 10.17 6.25 7C6.25 3.83 8.83 1.25 12 1.25C15.17 1.25 17.75 3.83 17.75 7C17.75 10.17 15.17 12.75 12 12.75ZM12 2.75C9.66 2.75 7.75 4.66 7.75 7C7.75 9.34 9.66 11.25 12 11.25C14.34 11.25 16.25 9.34 16.25 7C16.25 4.66 14.34 2.75 12 2.75Z"
-              fill="#417F56"
-            />
-            <path
-              d="M20.5901 22.75C20.1801 22.75 19.8401 22.41 19.8401 22C19.8401 18.55 16.3202 15.75 12.0002 15.75C7.68015 15.75 4.16016 18.55 4.16016 22C4.16016 22.41 3.82016 22.75 3.41016 22.75C3.00016 22.75 2.66016 22.41 2.66016 22C2.66016 17.73 6.85015 14.25 12.0002 14.25C17.1502 14.25 21.3401 17.73 21.3401 22C21.3401 22.41 21.0001 22.75 20.5901 22.75Z"
-              fill="#417F56"
-            />
-          </svg>
+        <div
+          dir="rtl"
+          className="w-[32px] h-[32px] md:w-auto md:h-[40px] flex items-center justify-center bg-[#E5F2E9] rounded-[4px]">
+          <div className="px-[8px] flex items-center justify-center">
+            <User className="w-[16px] h-[16px] md:w-[24px] md:h-[24px] text-[#417F56]" />
+            {isLogged ? (
+              <ArrowDown2 className="w-[10px] h-[10px] md:w-[16px] md:h-[16px] text-[#417F56]" />
+            ) : (
+              ""
+            )}
+          </div>
         </div>
         {/* cart */}
-        <div className="w-[32px] h-[32px] md:w-[40px] md:h-[40px] flex items-center justify-center bg-[#E5F2E9] rounded-[4px]">
-          <svg
-            viewBox="0 0 40 40"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <rect
-              width="40"
-              height="40"
-              rx="4"
-              fill="#E5F2E9"
-            />
-            <path
-              d="M26.19 25.75H15.54C14.55 25.75 13.6 25.33 12.93 24.6C12.26 23.87 11.92 22.89 12 21.9L12.83 11.94C12.86 11.63 12.75 11.33 12.54 11.1C12.33 10.87 12.04 10.75 11.73 10.75H10C9.59 10.75 9.25 10.41 9.25 10C9.25 9.59 9.59 9.25 10 9.25H11.74C12.47 9.25 13.16 9.56 13.65 10.09C13.92 10.39 14.12 10.74 14.23 11.13H26.72C27.73 11.13 28.66 11.53 29.34 12.25C30.01 12.98 30.35 13.93 30.27 14.94L29.73 22.44C29.62 24.27 28.02 25.75 26.19 25.75ZM14.28 12.62L13.5 22.02C13.45 22.6 13.64 23.15 14.03 23.58C14.42 24.01 14.96 24.24 15.54 24.24H26.19C27.23 24.24 28.17 23.36 28.25 22.32L28.79 14.82C28.83 14.23 28.64 13.67 28.25 13.26C27.86 12.84 27.32 12.61 26.73 12.61H14.28V12.62Z"
-              fill="#417F56"
-            />
-            <path
-              d="M24.25 30.75C23.15 30.75 22.25 29.85 22.25 28.75C22.25 27.65 23.15 26.75 24.25 26.75C25.35 26.75 26.25 27.65 26.25 28.75C26.25 29.85 25.35 30.75 24.25 30.75ZM24.25 28.25C23.97 28.25 23.75 28.47 23.75 28.75C23.75 29.03 23.97 29.25 24.25 29.25C24.53 29.25 24.75 29.03 24.75 28.75C24.75 28.47 24.53 28.25 24.25 28.25Z"
-              fill="#417F56"
-            />
-            <path
-              d="M16.25 30.75C15.15 30.75 14.25 29.85 14.25 28.75C14.25 27.65 15.15 26.75 16.25 26.75C17.35 26.75 18.25 27.65 18.25 28.75C18.25 29.85 17.35 30.75 16.25 30.75ZM16.25 28.25C15.97 28.25 15.75 28.47 15.75 28.75C15.75 29.03 15.97 29.25 16.25 29.25C16.53 29.25 16.75 29.03 16.75 28.75C16.75 28.47 16.53 28.25 16.25 28.25Z"
-              fill="#417F56"
-            />
-            <path
-              d="M29 16.75H17C16.59 16.75 16.25 16.41 16.25 16C16.25 15.59 16.59 15.25 17 15.25H29C29.41 15.25 29.75 15.59 29.75 16C29.75 16.41 29.41 16.75 29 16.75Z"
-              fill="#417F56"
-            />
-          </svg>
+        <div className=" relative w-[32px] h-[32px] md:w-[40px] md:h-[40px] flex items-center justify-center bg-[#E5F2E9] rounded-[4px]">
+          <ShoppingCart className="text-[#417F56] w-[16px] h-[16px] md:w-[24px] md:h-[24px]" />
+          {isLogged && isBuyed ? (
+            <div className=" absolute top-[3px] right-[4px] rounded-[64px] flex items-center justify-center bg-[#61AE7B] w-[12px] h-[12px]">
+              <p className="text-white text-[9px] font-[400] text-center">
+                4
+              </p>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
         {/* search */}
         <div className="w-[40px] h-[40px] items-center justify-center bg-[#E5F2E9] rounded-[4px] hidden md:flex">
-          <svg
-            width="40"
-            height="40"
-            viewBox="0 0 40 40"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <rect
-              width="40"
-              height="40"
-              rx="4"
-              fill="#E5F2E9"
-            />
-            <path
-              d="M19.5 29.75C13.85 29.75 9.25 25.15 9.25 19.5C9.25 13.85 13.85 9.25 19.5 9.25C25.15 9.25 29.75 13.85 29.75 19.5C29.75 25.15 25.15 29.75 19.5 29.75ZM19.5 10.75C14.67 10.75 10.75 14.68 10.75 19.5C10.75 24.32 14.67 28.25 19.5 28.25C24.33 28.25 28.25 24.32 28.25 19.5C28.25 14.68 24.33 10.75 19.5 10.75Z"
-              fill="#417F56"
-            />
-            <path
-              d="M30.0004 30.75C29.8104 30.75 29.6204 30.68 29.4704 30.53L27.4704 28.53C27.1804 28.24 27.1804 27.76 27.4704 27.47C27.7604 27.18 28.2404 27.18 28.5304 27.47L30.5304 29.47C30.8204 29.76 30.8204 30.24 30.5304 30.53C30.3804 30.68 30.1904 30.75 30.0004 30.75Z"
-              fill="#417F56"
-            />
-          </svg>
+          <SearchNormal1 className="text-[#417F56] w-[24px] h-[24px]" />
         </div>
       </div>
       {/* nav items */}
@@ -135,7 +101,7 @@ const Navbar = () => {
             </p>
             {index === 1 || index === 2 ? (
               <ArrowDown2
-                className={`w-[16px] mt-[8px] mr-[4px] ${
+                className={`w-[16px] mt-[5px] mr-[4px] ${
                   isActive(href)
                     ? "text-[#417F56]"
                     : "text-[#717171]"
