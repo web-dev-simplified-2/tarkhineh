@@ -40,43 +40,80 @@ const navItems = [
 const Navbar = () => {
   const isLogged: boolean = true; // this is for when user is logged or nah
   const isBuyed: boolean = true; //this is for when user is logged or nah
+
+  const [userClicked, setUserClicked] = useState(false);
+
   const path = usePathname();
+
   const isActive = useCallback(
     (href: string) => path === href,
     [path]
   );
+
+  const userClickHandler = () => {
+    setUserClicked(true);
+  };
+
   return (
     <div className=" sticky top-0 z-50 px-2 h-[115px] bg-white flex items-center justify-evenly  md:flex md:items-center md:justify-center shadow-[0px_0px_10px_0px_rgba(0, 0, 0, 0.15)]">
       {/* left icons */}
       <div className="h-[40px] flex items-center gap-2">
         {/* user */}
         <div
+          onClick={userClickHandler}
           dir="rtl"
-          className="w-[32px] h-[32px] md:w-auto md:h-[40px] flex items-center justify-center bg-[#E5F2E9] rounded-[4px]">
+          className={` active:scale-95 cursor-pointer w-[32px] h-[32px] md:w-auto md:h-[40px] flex items-center justify-center rounded-[4px] transition-all ${
+            userClicked ? "bg-[#417F56]" : "bg-[#E5F2E9]"
+          }`}>
           <div className="px-[8px] flex items-center justify-center">
-            <User className="w-[16px] h-[16px] md:w-[24px] md:h-[24px] text-[#417F56]" />
+            <User
+              className={` transition-all w-[16px] h-[16px] md:w-[24px] md:h-[24px]  ${
+                userClicked
+                  ? "text-white"
+                  : "text-[#417F56]"
+              }`}
+            />
             {isLogged ? (
-              <ArrowDown2 className="w-[10px] h-[10px] md:w-[16px] md:h-[16px] text-[#417F56]" />
+              <ArrowDown2
+                className={`transition-all w-[10px] h-[10px] md:w-[16px] md:h-[16px]  ${
+                  userClicked
+                    ? "text-white"
+                    : "text-[#417F56]"
+                }`}
+              />
             ) : (
               ""
             )}
           </div>
         </div>
         {/* cart */}
-        <div className=" relative w-[32px] h-[32px] md:w-[40px] md:h-[40px] flex items-center justify-center bg-[#E5F2E9] rounded-[4px]">
-          <ShoppingCart className="text-[#417F56] w-[16px] h-[16px] md:w-[24px] md:h-[24px]" />
+        <Link
+          href="/cart"
+          className={` active:scale-95 transition-all relative w-[32px] h-[32px] md:w-[40px] md:h-[40px] flex items-center justify-center rounded-[4px] ${
+            isActive("/cart")
+              ? "bg-[#417F56]"
+              : "bg-[#E5F2E9]"
+          }`}>
+          <ShoppingCart
+            className={`transition-all text-[#417F56] w-[16px] h-[16px] md:w-[24px] md:h-[24px] ${
+              isActive("/cart")
+                ? "text-white"
+                : "text-[#417F56]"
+            }`}
+          />
           {isLogged && isBuyed ? (
-            <div className=" absolute top-[3px] right-[4px] rounded-[64px] flex items-center justify-center bg-[#61AE7B] w-[12px] h-[12px]">
+            // Cart count goes here
+            <div className=" absolute top-[3px] right-[4px] rounded-[64px] flex items-center justify-center bg-[#61AE7B] w-[13.5px] h-[13.5px]">
               <p className="text-white text-[9px] font-[400] text-center">
-                4
+                2
               </p>
             </div>
           ) : (
             ""
           )}
-        </div>
+        </Link>
         {/* search */}
-        <div className="w-[40px] h-[40px] items-center justify-center bg-[#E5F2E9] rounded-[4px] hidden md:flex">
+        <div className="active:scale-95 transition-all cursor-pointer w-[40px] h-[40px] items-center justify-center bg-[#E5F2E9] rounded-[4px] hidden md:flex">
           <SearchNormal1 className="text-[#417F56] w-[24px] h-[24px]" />
         </div>
       </div>
