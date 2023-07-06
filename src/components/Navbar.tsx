@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import { ArrowDown2 } from "iconsax-react";
 import { usePathname } from "next/navigation";
@@ -38,7 +37,7 @@ const Navbar = () => {
     [path]
   );
   return (
-    <div className="h-[115px] bg-white flex items-center justify-evenly  md:flex md:items-center md:justify-center shadow-[0px_0px_10px_0px_rgba(0, 0, 0, 0.15)]">
+    <div className="h-[115px] font-primarylight bg-white flex items-center justify-evenly  md:flex md:items-center md:justify-center shadow-[0px_0px_10px_0px_rgba(0, 0, 0, 0.15)]">
       {/* left icons */}
       <div className="h-[40px] flex items-center gap-2">
         {/* user */}
