@@ -31,6 +31,7 @@ export default function Home() {
     <div className=" min-h-screen  w-full">
       {/* banner Slider */}
 
+
       <BannerSlider images={images} />
 
       <MenuSection/>

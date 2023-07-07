@@ -26,10 +26,10 @@ function MenuSection() {
   ];
 
   return (
-    <div className=" flex flex-col items-center justify-center my-12 w-full mx-auto max-w-7xl">
-      <h1 className=" font-primarySemiBold text-xl mb-12 md:mb-20">منوی رستوران</h1>
+    <div className=" flex flex-col items-center justify-center my-8 w-full mx-auto max-w-7xl">
+      <h1 className=" font-primarySemiBold text-xl mb-12 lg:mb-20">منوی رستوران</h1>
 
-      <div className=" grid grid-cols-2 w-full px-4 rtl  md:flex gap-4">
+      <div className=" grid grid-cols-2 w-full px-4 rtl  lg:flex gap-4">
         {menuList.map((item, index) => {
           return (
             <MenuItemCard
