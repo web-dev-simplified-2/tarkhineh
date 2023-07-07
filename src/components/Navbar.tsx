@@ -20,6 +20,7 @@ const navItems = [
   },
   {
     title: "منو",
+    href: "/menu",
     list: [
       { title: "غذای اصلی", href: "/menu" },
       { title: "غذای اصلی", href: "/menu" },
@@ -30,11 +31,12 @@ const navItems = [
   },
   {
     title: "شعبه",
+    href: "/branches",
     list: [
-      { title: "شعبه اکباتان", href: "/menu" },
-      { title: "شعبه چالوس", href: "/menu" },
-      { title: "شعبه اقدسیه", href: "/menu" },
-      { title: "شعبه ونک", href: "/menu" },
+      { title: "شعبه اکباتان", href: "/branches?branchName:ekbatan" },
+      { title: "شعبه چالوس", href: "/branches" },
+      { title: "شعبه اقدسیه", href: "/branches" },
+      { title: "شعبه ونک", href: "/branches" },
     ],
     listed: true,
   },
@@ -67,7 +69,7 @@ const Navbar = () => {
 
   return (
     <div
-      className=" sticky top-0 z-50 px-2 h-[64px] font-primary
+      className=" sticky top-0 z-20 px-2 h-[64px] font-primary
      lg:h-[115px] bg-white flex items-center justify-evenly  lg:flex lg:items-center lg:justify-center shadow-[0px_0px_10px_0px_rgba(0, 0, 0, 0.15)]"
     >
       {/* left icons */}
@@ -131,6 +133,7 @@ const Navbar = () => {
         {navItems.map((navItem, index) =>
           navItem.listed ? (
             <NavbarDropDown
+              href={navItem.href}
               mainTitle={navItem.title}
               items={navItem.list}
               key={index}
@@ -142,8 +145,10 @@ const Navbar = () => {
               className="relative h-[36px] flex items-center justify-center ml-[24px]"
             >
               <p
-                className={`text-[20px] text-center font-[700] ${
-                  isActive(navItem.href) ? "text-[#417F56]" : "text-[#717171]"
+                className={`text-[20px] text-center font-primary ${
+                  isActive(navItem.href)
+                    ? "text-[#417F56] font-primarySemiBold"
+                    : "text-[#717171]"
                 }
                 href
               )}`}
