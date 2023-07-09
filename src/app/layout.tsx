@@ -5,9 +5,11 @@ import { Toaster } from "react-hot-toast";
 
 import "./globals.css";
 import { Inter } from "next/font/google";
-import Navbar from "./components/Navbar";
+
+import Navbar from "@/components/Navbar";
 import MotionDiv from "@/components/MotionDiv";
-import Footer from "./components/Footer";
+import Footer from "@/components/Footer";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
