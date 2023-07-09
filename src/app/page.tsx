@@ -10,6 +10,8 @@ import BannerSlider from "@/components/BannerSlider";
 import RegisterModal from "@/components/modals/RegisterModal";
 import useRegisterModal from "@/hooks/useRegisterModal";
 import { useSession } from "next-auth/react";
+import InfoSection from "@/components/InfoSection";
+import MenuSection from "@/components/MenuSection";
 
 const images = [
   bannerSlider.src,
@@ -27,7 +29,11 @@ export default function Home() {
     <div className=" min-h-screen  w-full">
       {/* banner Slider */}
 
+
       <BannerSlider images={images} />
+
+      <MenuSection/>
+
 
       
 
