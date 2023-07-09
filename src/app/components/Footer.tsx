@@ -15,7 +15,7 @@ const Footer = () => {
       }}>
       <div
         dir="rtl"
-        className={`w-full bg-black bg-opacity-60 shadow items-start gap-[81px] md:gap-32 flex md:h-[319px] md:pl-[108px] pl-[87px] pr-[20px] md:pr-[109px] md:pt-8 pt-[16px] md:pb-[83px] pb-[22px]`}>
+        className={`w-full bg-black bg-opacity-60 shadow flex items-start gap-[81px] 2xl:gap-32 xl:gap-20 lg:gap-4 md:gap-3 md:h-[319px] md:pl-[108px] pl-[87px] pr-[20px] md:pr-[20px] lg:pr-[70px] xl:pr-[8%]  2xl:pr-[15%] md:pt-8 pt-[16px] md:pb-[83px] pb-[22px]`}>
         {/* دسترسی آسان */}
         <div className="flex flex-col   w-[87px] md:w-[184px] h-[114px] md:h-[192px] gap-[8px] md:gap-[16px]">
           <h1 className="text-white font-primarySemiBold md:text-[20px] text-[12px] md:font-[700] font-[400]">
