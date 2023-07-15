@@ -1,5 +1,5 @@
 import React from "react";
-import Img from "../assets/InfoSection/about.png";
+import Img from ".././assets/InfoSection/about.png";
 import Image from "next/image";
 import { ArrowLeft2, Diagram, User, MenuBoard, HomeWifi } from "iconsax-react";
 
@@ -58,9 +58,3 @@ const InfoSection = () => {
 };
 
 export default InfoSection;
-{
-  /*
-
-       
-*/
-}
