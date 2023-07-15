@@ -7,8 +7,6 @@ import bannerSlider3 from "../assets/BannerSlider/bannerSlider3.jpg";
 import bannerSlider4 from "../assets/BannerSlider/bannerSlider4.jpg";
 import BannerSlider from "@/components/BannerSlider";
 
-
-
 import RegisterModal from "@/components/modals/RegisterModal";
 import useRegisterModal from "@/hooks/useRegisterModal";
 import { useSession } from "next-auth/react";
@@ -35,8 +33,6 @@ export default function Home() {
       <BannerSlider images={images} />
 
       <MenuSection/>
-
-      {/* <InfoSection /> */}
 
 
       
