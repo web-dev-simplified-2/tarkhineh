@@ -11,6 +11,7 @@ import RegisterModal from "@/components/modals/RegisterModal";
 import useRegisterModal from "@/hooks/useRegisterModal";
 import { useSession } from "next-auth/react";
 import InfoSection from "@/components/InfoSection";
+import TarkhineGardi from "@/components/TarkhineGardi";
 import MenuSection from "@/components/MenuSection";
 
 const images = [
@@ -33,6 +34,8 @@ export default function Home() {
       <BannerSlider images={images} />
 
       <MenuSection/>
+
+      {/* <InfoSection /> */}
 
 
       

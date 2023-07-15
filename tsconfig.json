@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/BannerSlider.tsx", "src/components/InfoSection.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/BannerSlider.tsx", "src/components/InfoSection.tsx", "src/components/TarkhineGardi.js", "src/components/modals/TarkhineGardiModal.jsx"],
   "exclude": ["node_modules"]
 }
