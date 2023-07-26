@@ -13,6 +13,8 @@ import { motion } from "framer-motion";
 import { title } from "process";
 import NavbarDropDown from "./NavbarDropdown";
 
+import SearchBox from "./modals/SearchboxModal";
+
 const navItems = [
   {
     title: "صفحه اصلی",
@@ -53,6 +55,11 @@ const navItems = [
     href: "/contact",
   },
 ];
+interface SearchNormal1Props {
+  open: any;
+  onClose: any;
+  // Add any other props required by the component
+}
 const Navbar = () => {
   const isLogged: boolean = true; // this is for when user is logged or nah
   const isBuyed: boolean = true; //this is for when user is logged or nah
@@ -66,6 +73,7 @@ const Navbar = () => {
   const userClickHandler = () => {
     setUserClicked(true);
   };
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <div
@@ -121,9 +129,13 @@ const Navbar = () => {
           )}
         </Link>
         {/* search */}
-        <div className="active:scale-95 transition-all cursor-pointer w-[40px] h-[40px] items-center justify-center bg-[#E5F2E9] rounded-[4px] hidden lg:flex">
-          <SearchNormal1 className="text-[#417F56] w-[24px] h-[24px]" />
-        </div>
+        
+          <div className="active:scale-95 transition-all cursor-pointer w-[40px] h-[40px] items-center justify-center bg-[#E5F2E9] rounded-[4px] hidden lg:flex">
+            <SearchNormal1 className="text-[#417F56] w-[24px] h-[24px]" onClick={() => {
+                setOpenModal(true);
+              }}/>
+          </div>
+       
       </div>
       {/* nav items */}
       <div
@@ -333,6 +345,7 @@ const Navbar = () => {
           </defs>
         </svg>
       </div>
+      <SearchBox open={openModal} onClose={() => setOpenModal(false)}/>
     </div>
   );
 };
