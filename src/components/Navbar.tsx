@@ -13,6 +13,7 @@ import { motion } from "framer-motion";
 import { title } from "process";
 import NavbarDropDown from "./NavbarDropdown";
 
+
 const navItems = [
   {
     title: "صفحه اصلی",
@@ -33,7 +34,7 @@ const navItems = [
     title: "شعبه",
     href: "/branches",
     list: [
-      { title: "شعبه اکباتان", href: "/branches?branchName:ekbatan" },
+      { title: "شعبه اکباتان", href: "/branches/ekbatan" },
       { title: "شعبه چالوس", href: "/branches" },
       { title: "شعبه اقدسیه", href: "/branches" },
       { title: "شعبه ونک", href: "/branches" },
@@ -53,6 +54,11 @@ const navItems = [
     href: "/contact",
   },
 ];
+interface SearchNormal1Props {
+  open: any;
+  onClose: any;
+  // Add any other props required by the component
+}
 const Navbar = () => {
   const isLogged: boolean = true; // this is for when user is logged or nah
   const isBuyed: boolean = true; //this is for when user is logged or nah
@@ -66,6 +72,7 @@ const Navbar = () => {
   const userClickHandler = () => {
     setUserClicked(true);
   };
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <div
@@ -121,9 +128,13 @@ const Navbar = () => {
           )}
         </Link>
         {/* search */}
-        <div className="active:scale-95 transition-all cursor-pointer w-[40px] h-[40px] items-center justify-center bg-[#E5F2E9] rounded-[4px] hidden lg:flex">
-          <SearchNormal1 className="text-[#417F56] w-[24px] h-[24px]" />
-        </div>
+        
+          <div className="active:scale-95 transition-all cursor-pointer w-[40px] h-[40px] items-center justify-center bg-[#E5F2E9] rounded-[4px] hidden lg:flex">
+            <SearchNormal1 className="text-[#417F56] w-[24px] h-[24px]" onClick={() => {
+                setOpenModal(true);
+              }}/>
+          </div>
+       
       </div>
       {/* nav items */}
       <div
@@ -174,7 +185,7 @@ const Navbar = () => {
           )
         )}
       </div>
-      {/* Nav Logo */}
+      {/* Nav Logo */}<Link  href="/">
       <div className="mx-[40px] w-[102px] h-[32px] lg:mx-0 lg:w-[155px] lg:h-[51px] flex items-center justify-center">
         {/* رستوران های زنجیره ای */}
         <svg
@@ -295,7 +306,7 @@ const Navbar = () => {
             fill="#417F56"
           />
         </svg>
-      </div>
+      </div></Link>
       {/* hamburger menu icon */}
       <div className="w-[24px] h-[24px] lg:hidden">
         <svg
@@ -333,6 +344,7 @@ const Navbar = () => {
           </defs>
         </svg>
       </div>
+     
     </div>
   );
 };
