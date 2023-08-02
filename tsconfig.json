@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/BannerSlider.tsx", "src/components/InfoSection.tsx", "src/components/TarkhineGardi.js", "src/components/modals/TarkhineGardiModal.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/BannerSlider.tsx", "src/components/InfoSection.tsx", "src/components/TarkhineGardi.js", "src/components/modals/TarkhineGardiModal.jsx", "src/components/modals/SearchboxModal.js", "src/components/Navbar.js", "src/components/Navbar.js"],
   "exclude": ["node_modules"]
 }
