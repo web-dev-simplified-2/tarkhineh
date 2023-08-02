@@ -2,13 +2,13 @@ import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Image from 'next/image';
-import pic1 from "../assets/foodSlider/pic1.png";
-import pic2 from "../assets/foodSlider/pic2.png";
-import pic3 from "../assets/foodSlider/pic3.png";
-import pic4 from "../assets/foodSlider/pic4.png";
-import pic5 from "../assets/foodSlider/pic5.png";
+import pic1 from "../assets/foodSlider/second/pic1.png";
+import pic2 from "../assets/foodSlider/second/pic2.png";
+import pic3 from "../assets/foodSlider/second/pic3.png";
+import pic4 from "../assets/foodSlider/second/pic4.png";
+import pic5 from "../assets/foodSlider/second/pic5.png";
 
-const FoodSlider = () => {
+const FoodSliderSecond = () => {
     const responsive = {
         Desktop: {
           
@@ -54,19 +54,19 @@ const FoodSlider = () => {
 
      
     return (
-    <section className="my-[5%]">
-        <h2 className="font-primary text-[24px] font-bold text-right mb-7 mr-[11%]">پیشنهاد ویژه</h2>
+    <section className="w-ful h-[555px] bg-[#315F41]  my-[5%]">
+        <h2 className="font-primary text-[24px] text-[#FFFFFF] font-bold text-right pt-[2%] mb-7 mr-[11%]">غذاهای محبوب</h2>
         <div className='flex justify-center'>
         <Carousel responsive={responsive} className="w-[1224px] h-[433px] ml-[4%]  ">
 
           {/* 1 */}
-            <div className="w-[288px] h-[433px] rounded-md border border-[#5e5b5b] ml-1 relative"> 
+            <div className="w-[288px] h-[433px] bg-[#FFFFFF] rounded-md border border-[#5e5b5b] ml-1 relative"> 
                 <Image src={pic1}
                     alt="product 1"
                     width={1080}
                     height={1080}
                     className="w-[288px] h-[256px] "/>  
-                    <h2 className="text-center font-primary text-[22px] font-bold mt-3">دلمه برگ کلم</h2>
+                    <h2 className="text-center font-primary text-[22px] font-bold mt-3">پنینی اسفناج</h2>
                   <div className="flex font-primary justify-center mt-2 "> 
                     {/* discount */}
                     {/* Left */}
@@ -101,14 +101,14 @@ const FoodSlider = () => {
             </div>
 
             {/* 2 */}
-            <div className="w-[288px] h-[433px] rounded-md border border-[#5e5b5b] ml-1  relative"> 
+            <div className="w-[288px] h-[433px] bg-[#FFFFFF] rounded-md border border-[#5e5b5b] ml-1  relative"> 
                 <Image src={pic2}
                     alt="product 1"
                     width={1080}
                     height={1080}
                     className="w-[288px] h-[256px] "/>  
                     {/* lg:-mt-32 -mt-20 lg:h-[240px] */}
-                    <h2 className="text-center font-primary text-[22px] font-bold mt-3">بادمجان شکم‌پر</h2>
+                    <h2 className="text-center font-primary text-[22px] font-bold mt-3">پیتزا پپرونی</h2>
                   <div className="flex font-primary justify-center space-x-9 mt-2 "> 
                     {/* discount */}
                     {/* Left */}
@@ -143,14 +143,14 @@ const FoodSlider = () => {
             </div>
 
             {/* 3 */}
-            <div className="w-[288px] h-[433px] rounded-md border border-[#5e5b5b] ml-1 relative"> 
+            <div className="w-[288px] h-[433px] bg-[#FFFFFF] rounded-md border border-[#5e5b5b] ml-1 relative"> 
                 <Image src={pic3}
                     alt="product 1"
                     width={1080}
                     height={1080}
                     className="w-[288px] h-[256px] "/>  
                     {/* lg:-mt-32 -mt-20 lg:h-[240px] */}
-                    <h2 className="text-center font-primary text-[22px] font-bold mt-3">کالزونه اسفناج</h2>
+                    <h2 className="text-center font-primary text-[22px] font-bold mt-3">راتاتویی</h2>
                   <div className="flex font-primary justify-center space-x-9 mt-2 "> 
                     {/* discount */}
                     {/* Left */}
@@ -185,14 +185,14 @@ const FoodSlider = () => {
             </div>
 
             {/* 4 */}
-            <div className="w-[288px] h-[433px] rounded-md border border-[#5e5b5b] ml-1 relative"> 
+            <div className="w-[288px] h-[433px] bg-[#FFFFFF] rounded-md border border-[#5e5b5b] ml-1 relative"> 
                 <Image src={pic4}
                     alt="product 1"
                     width={1080}
                     height={1080}
                     className="w-[288px] h-[256px] "/>  
                     {/* lg:-mt-32 -mt-20 lg:h-[240px] */}
-                    <h2 className="text-center font-primary text-[22px] font-bold mt-3">پیتزا قارچ</h2>
+                    <h2 className="text-center font-primary text-[22px] font-bold mt-3">بورانی بادمجان</h2>
                   <div className="flex font-primary justify-center space-x-9 mt-2 "> 
                     {/* discount */}
                     {/* Left */}
@@ -227,14 +227,14 @@ const FoodSlider = () => {
             </div>
             
             {/* 5 */}
-            <div className="w-[288px] h-[433px] rounded-md border border-[#5e5b5b] ml-1 relative"> 
+            <div className="w-[288px] h-[433px] bg-[#FFFFFF] rounded-md border border-[#5e5b5b] ml-1 relative"> 
                 <Image src={pic5}
                     alt="product 1"
                     width={1080}
                     height={1080}
                     className="w-[288px] h-[256px] "/>  
                     {/* lg:-mt-32 -mt-20 lg:h-[240px] */}
-                    <h2 className="text-center font-primary text-[22px] font-bold mt-3">پاستا سبزیجات</h2>
+                    <h2 className="text-center font-primary text-[22px] font-bold mt-3">پاکورا گیاهی</h2>
                   <div className="flex font-primary justify-center space-x-9 mt-2 "> 
                     {/* discount */}
                     {/* Left */}
@@ -276,4 +276,4 @@ const FoodSlider = () => {
     
   };
   
-  export default FoodSlider;
+  export default FoodSliderSecond;
