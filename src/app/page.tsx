@@ -14,6 +14,7 @@ import InfoSection from "@/components/InfoSection";
 import TarkhineGardi from "@/components/TarkhineGardi";
 import MenuSection from "@/components/MenuSection";
 
+
 const images = [
   bannerSlider.src,
   bannerSlider2.src,
@@ -36,6 +37,8 @@ export default function Home() {
       <MenuSection/>
 
       {/* <InfoSection /> */}
+      <TarkhineGardi/>
+      
 
       
       
