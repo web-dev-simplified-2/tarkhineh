@@ -14,6 +14,9 @@ import { title } from "process";
 import NavbarDropDown from "./NavbarDropdown";
 
 
+import SearchBox from "./modals/SearchboxModal";
+
+
 const navItems = [
   {
     title: "صفحه اصلی",
@@ -344,7 +347,10 @@ const Navbar = () => {
           </defs>
         </svg>
       </div>
-     
+
+
+      <SearchBox open={openModal} onClose={() => setOpenModal(false)}/>
+
     </div>
   );
 };
