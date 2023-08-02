@@ -13,7 +13,9 @@ import { motion } from "framer-motion";
 import { title } from "process";
 import NavbarDropDown from "./NavbarDropdown";
 
+
 import SearchBox from "./modals/SearchboxModal";
+
 
 const navItems = [
   {
@@ -35,7 +37,7 @@ const navItems = [
     title: "شعبه",
     href: "/branches",
     list: [
-      { title: "شعبه اکباتان", href: "/branches?branchName:ekbatan" },
+      { title: "شعبه اکباتان", href: "/branches/ekbatan" },
       { title: "شعبه چالوس", href: "/branches" },
       { title: "شعبه اقدسیه", href: "/branches" },
       { title: "شعبه ونک", href: "/branches" },
@@ -186,7 +188,7 @@ const Navbar = () => {
           )
         )}
       </div>
-      {/* Nav Logo */}
+      {/* Nav Logo */}<Link  href="/">
       <div className="mx-[40px] w-[102px] h-[32px] lg:mx-0 lg:w-[155px] lg:h-[51px] flex items-center justify-center">
         {/* رستوران های زنجیره ای */}
         <svg
@@ -307,7 +309,7 @@ const Navbar = () => {
             fill="#417F56"
           />
         </svg>
-      </div>
+      </div></Link>
       {/* hamburger menu icon */}
       <div className="w-[24px] h-[24px] lg:hidden">
         <svg
@@ -345,7 +347,10 @@ const Navbar = () => {
           </defs>
         </svg>
       </div>
+
+
       <SearchBox open={openModal} onClose={() => setOpenModal(false)}/>
+
     </div>
   );
 };
