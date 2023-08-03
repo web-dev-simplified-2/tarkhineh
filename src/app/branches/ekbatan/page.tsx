@@ -4,7 +4,8 @@ import EkbatanBranchSlider from "../../../components/EkbatanBranchSlider";
 import branchpicture from "../../../assets/BannerSlider/branchpicture.png";
 import FoodSlider from "../../../components/FoodSlider";
 import FoodSliderSecond from "../../../components/FoodSliderSecond";
-import FoodSliderThird from "../../../components/FoodSliderThird"
+import FoodSliderThird from "../../../components/FoodSliderThird";
+import CommentSlider from '@/components/CommentSlider';
 
 import bannerSlider from "../assets/BannerSlider/bannerSlider.jpg";
 import bannerSlider2 from "../assets/BannerSlider/bannerSlider2.jpg";
@@ -29,6 +30,7 @@ const page = () => {
       <FoodSliderSecond/>
       <FoodSliderThird/>
       <EkbatanBranchSlider images={images} />
+      <CommentSlider/>
       
     </div>
   )
