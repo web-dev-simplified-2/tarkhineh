@@ -36,7 +36,7 @@ export default function Home() {
 
       <MenuSection/>
 
-      {/* <InfoSection /> */}
+      <InfoSection />
       <TarkhineGardi/>
       
 

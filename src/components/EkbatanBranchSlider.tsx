@@ -47,7 +47,7 @@ function EkbatanBranchSlider({ images }: BannerSliderProps) {
     }
   }
 
-  return (
+  return (<div className="mb-[10%]">
     <MotionDiv>
       <h1 className="font-primary font-bold text-[20px] text-center mb-3">شعبه اکباتان</h1>
       <CarouselProvider
@@ -130,7 +130,7 @@ function EkbatanBranchSlider({ images }: BannerSliderProps) {
         </ButtonNext>
       </CarouselProvider>
      
-    </MotionDiv>
+    </MotionDiv> </div>
   );
 }
 
